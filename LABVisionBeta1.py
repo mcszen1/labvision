@@ -123,6 +123,25 @@ def main():
             temp_path1 = save_uploaded_file(uploaded_file.read())
     
             st.image(temp_path1, caption="Image fornecida", use_column_width=True)
+
+            if uploaded_file is not None:
+                # Convert the file to an image URL or base64-encoded string as required by OpenAI API
+                image_data = uploaded_file.getvalue()
+                image_url = "data:image/jpg;base64," + base64.b64encode(image_data).decode()
+        
+                # Analyze the image with OpenAI's GPT-4 Vision API
+                description = analyze_image_with_openai(image_url)
+                
+                # Translate description to Portuguese
+                #translated_description = translate_to_portuguese(description)
+                
+                # Display the description and translated text
+                st.write("Description: ", description)
+                #st.write("Translated Description: ", translated_description)
+                
+                # Convert the description to speech
+                fala(description)
+                
     if option=='Camera':
         picture = st.camera_input("Tire uma foto")
 
@@ -131,23 +150,23 @@ def main():
             st.image(temp_path, caption="Foto tirada", use_column_width=True)
     
    
-    if uploaded_file is not None:
-        # Convert the file to an image URL or base64-encoded string as required by OpenAI API
-        image_data = uploaded_file.getvalue()
-        image_url = "data:image/jpg;base64," + base64.b64encode(image_data).decode()
-
-        # Analyze the image with OpenAI's GPT-4 Vision API
-        description = analyze_image_with_openai(image_url)
+            if picture is not None:
+                # Convert the file to an image URL or base64-encoded string as required by OpenAI API
+                image_data = picture.getvalue()
+                image_url = "data:image/jpg;base64," + base64.b64encode(image_data).decode()
         
-        # Translate description to Portuguese
-        #translated_description = translate_to_portuguese(description)
-        
-        # Display the description and translated text
-        st.write("Description: ", description)
-        #st.write("Translated Description: ", translated_description)
-        
-        # Convert the description to speech
-        fala(description)
+                # Analyze the image with OpenAI's GPT-4 Vision API
+                description = analyze_image_with_openai(image_url)
+                
+                # Translate description to Portuguese
+                #translated_description = translate_to_portuguese(description)
+                
+                # Display the description and translated text
+                st.write("Description: ", description)
+                #st.write("Translated Description: ", translated_description)
+                
+                # Convert the description to speech
+                fala(description)
 
 if __name__ == '__main__':
     main()
