@@ -48,6 +48,11 @@ def translate_to_portuguese(text):
         print("Unexpected response format:", response)
         return None  # ou você pode retornar o texto original se preferir
 
+def save_uploaded_file(uploaded_file_content):
+    with open("temp_image.jpg", "wb") as f:
+        f.write(uploaded_file_content)
+    return "temp_image.jpg"
+
 def fala(text):
     # This example requires environment variables named "SPEECH_KEY" and "SPEECH_REGION"
     speech_config = speechsdk.SpeechConfig(subscription=os.environ.get('SPEECH_KEY'), region=os.environ.get('SPEECH_REGION'))
