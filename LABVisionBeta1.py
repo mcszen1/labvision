@@ -114,11 +114,11 @@ def main():
         description = analyze_image_with_openai(image_url)
         
         # Translate description to Portuguese
-        translated_description = translate_to_portuguese(description)
+        #translated_description = translate_to_portuguese(description)
         
         # Display the description and translated text
         st.write("Description: ", description)
-        st.write("Translated Description: ", translated_description)
+        #st.write("Translated Description: ", translated_description)
         
         # Convert the description to speech
         fala(translated_description)
