@@ -87,7 +87,7 @@ def analyze_image_with_openai(image):
             {
                 "role": "user",
                 "content": [
-                    {"type": "text", "text": "What’s in this image?"},
+                    {"type": "text", "text": "What’s in this image? Answer in Portuguese"},
                     {"type": "image_url", "image_url": image},
                 ],
             }
@@ -95,7 +95,7 @@ def analyze_image_with_openai(image):
         max_tokens=300,
     )
 
-    print(response.json())
+    print(response.choices[0])
     # In a real scenario, handle the response and extract the description.
     # This is a placeholder for the actual API call.
     description = response.choices[0]
@@ -122,7 +122,7 @@ def main():
         #st.write("Translated Description: ", translated_description)
         
         # Convert the description to speech
-        fala(translated_description)
+        fala(description)
 
 if __name__ == '__main__':
     main()
