@@ -6,6 +6,7 @@ import tempfile
 import requests, uuid, json
 import azure.cognitiveservices.speech as speechsdk
 from openai import OpenAI
+import json
 
 # Initialize the OpenAI client with your API key
 client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
@@ -94,13 +95,16 @@ def analyze_image_with_openai(image):
         ],
         max_tokens=300,
     )
-
-    print(response["choices"][0]["message"]["content"])
+    resposta=response["choices"][0]
+    print(resposta)
+    description=json.loads(resposta)
+    texto=description["choices"][0]["message"]["content"]
+    print(texto)
     # In a real scenario, handle the response and extract the description.
     # This is a placeholder for the actual API call.
-    description = response["choices"][0]["message"]["content"]
+    #description = response["choices"][0]["message"]["content"]
     
-    return description
+    return texto
 
 def main():
     st.title('LabVision1 - Image Analysis')
