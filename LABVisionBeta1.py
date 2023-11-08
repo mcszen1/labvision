@@ -95,10 +95,11 @@ def analyze_image_with_openai(image):
         ],
         max_tokens=300,
     )
-    print(response["choices"][0])
+    description_content = response["choices"][0]["message"]["content"]
+    print(description_content)
     
-    description=json.loads(response["choices"][0])
-    print(description)
+    #description=json.loads(response["choices"][0])
+    #print(description)
    
     # In a real scenario, handle the response and extract the description.
     # This is a placeholder for the actual API call.
