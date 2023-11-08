@@ -114,7 +114,8 @@ def analyze_image_with_openai(image):
 
 def main():
     st.image('labcom_logo_preto.jpg')
-    st.title("GERADOR DE LEGENDAS")
+    st.title("LABCOM VISION")
+    st.write('ASSISTENTE DE IDENTIFICAÇÃO E DESCRIÇÃO DE IMAGENS')
     st.write('Use uma imagem de arquivo ou tire uma foto com sua câmera')
     option = st.radio('Escolha a origem da sua imagem:',('Arquivo', 'Camera'))
     if option=="Arquivo":
