@@ -97,7 +97,7 @@ def analyze_image_with_openai(image):
 
     # In a real scenario, handle the response and extract the description.
     # This is a placeholder for the actual API call.
-    description = "A scenic view of a nature boardwalk with lush greenery and a clear sky."
+    description = response.choices[0]
     
     return description
 
