@@ -105,7 +105,7 @@ def analyze_image_with_openai(image):
     # This is a placeholder for the actual API call.
     #description = response["choices"][0]["message"]["content"]
     
-    return description
+    return description_content
 
 def main():
     st.title('LabVision1 - Image Analysis')
