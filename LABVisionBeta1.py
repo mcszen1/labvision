@@ -8,7 +8,7 @@ import azure.cognitiveservices.speech as speechsdk
 from openai import OpenAI
 
 # Initialize the OpenAI client with your API key
-# client = OpenAI(api_key='your-api-key')
+client = OpenAI(api_key='OPENAI_KEY')
 
 def translate_to_portuguese(text):
     # Pegue suas chaves e endpoint das variáveis de ambiente
