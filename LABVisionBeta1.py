@@ -97,7 +97,7 @@ def analyze_image_with_openai(image):
     )
     print(response["choices"][0])
     
-    description=json.loads(response["choices"[0])
+    description=json.loads(response["choices"][0])
     print(description)
    
     # In a real scenario, handle the response and extract the description.
