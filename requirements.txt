@@ -1,4 +1,5 @@
 streamlit==1.10.0
 openai
-azure-cognitiveservices-speech
 pyttsx3==2.90
+fuzzywuzzy[speedup]
+pandas
