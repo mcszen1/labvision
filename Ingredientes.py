@@ -105,16 +105,12 @@ def main():
                 # Analyze the image with OpenAI's GPT-4 Vision API
                 description = analyze_image_with_openai(image_url)
                 
-                # Translate description to Portuguese
-                #translated_description = translate_to_portuguese(description)
-                
-                # Display the description and translated text
+                # Display the description 
                 st.write("Description: ", description)
-                #st.write("Translated Description: ", translated_description)
-                
-                # Convert the description to speech
-                tts(description)
+
+		# Calcular calorias
+		total= calcular_calorias_do_prato(description, tabela_calorias)
+		st.write("Total de Calorias: ", total)
 
 if __name__ == '__main__':
     main()
-
