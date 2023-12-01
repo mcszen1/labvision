@@ -65,7 +65,6 @@ def calcular_calorias_do_prato(ingredientes, tabela_calorias):
             st.write(f"Ingrediente não encontrado ou muito diferente: {ingrediente}")
     return total_calorias
 
-
 def main():
     st.image('labcom_logo_preto.jpg')
     st.title('Calculadora de Calorias de Pratos')
@@ -111,9 +110,8 @@ def main():
 
 		
       
-
-if __name__ == '__main__':
-    main()
+   if __name__ == '__main__':
+	   main()
 
 
 
