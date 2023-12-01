@@ -91,17 +91,7 @@ def main():
                 
                  
                 # Display the description and translated text
-                st.write("Description: ", description)
-		# Botão para calcular as calorias
-              
-     if st.button('Calcular Calorias'):
-	    ingredientes_selecionados = description
-    	    total_calorias = calcular_calorias_do_prato(ingredientes_selecionados, tabela_calorias)
-    	    st.write(f"Calorias totais do prato: {total_calorias}")
-
-
-   
-                
+                st.write("Description: ", description) 
 
                 
     if option=='Camera':
@@ -125,12 +115,13 @@ def main():
                 
                 # Display the description and translated text
                 st.write("Description: ", description)
-     if st.button('Calcular Calorias'):
-		ingredientes_selecionados = description
-	    	total_calorias = calcular_calorias_do_prato(ingredientes_selecionados, tabela_calorias)
-	    	st.write(f"Calorias totais do prato: {total_calorias}")
-  
-                
+      
 
 if __name__ == '__main__':
     main()
+    # Botão para calcular as calorias
+              
+     if st.button('Calcular Calorias'):
+	    ingredientes_selecionados = description
+    	    total_calorias = calcular_calorias_do_prato(ingredientes_selecionados, tabela_calorias)
+    	    st.write(f"Calorias totais do prato: {total_calorias}") 
