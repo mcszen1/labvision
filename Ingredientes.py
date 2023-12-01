@@ -45,7 +45,7 @@ def analyze_image_with_openai(image):
 
 def encontrar_ingrediente_semelhante(ingrediente, opcoes):
     ingrediente_semelhante, similaridade = process.extractOne(ingrediente, opcoes)
-    if similaridade > 30:  # Definir um limiar de similaridade
+    if similaridade > 60:  # Definir um limiar de similaridade
         st.write(ingrediente_semelhante,similaridade)
         return ingrediente_semelhante
     else:
@@ -58,6 +58,7 @@ def calcular_calorias_do_prato(ingredientes, tabela_calorias):
         ingrediente_encontrado = encontrar_ingrediente_semelhante(ingrediente, tabela_calorias.keys())
         if ingrediente_encontrado:
             calorias = tabela_calorias.get(ingrediente_encontrado, 0)
+            st.write(calorias)
             print(f"Ingrediente: {ingrediente_encontrado}, Calorias: {calorias}")  # Para depuração
             if isinstance(calorias, (int, float)):  # Verifica se 'calorias' é um número
                 total_calorias += calorias
