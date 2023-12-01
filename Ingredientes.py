@@ -113,6 +113,7 @@ def main():
 if __name__ == '__main__':
     main()
 
-st.write("Description: ", description)
+st.write("Description: ")
+st.write(description)
 
 
