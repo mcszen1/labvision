@@ -74,6 +74,7 @@ def main():
     st.write('Tenha uma ideia aproximada de quantas calorias você vai ingerir')
     st.write('Use uma imagem de arquivo ou tire uma foto com sua câmera')
     option = st.radio('Escolha a origem da sua imagem:',('Arquivo', 'Camera'))
+    st.button('Calcular Calorias')
     if option=="Arquivo":
         uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "png", "jpeg"])
         if uploaded_file:
