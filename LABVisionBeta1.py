@@ -82,6 +82,20 @@ def fala(text):
     # Clean up the temporary file
     os.remove(temp_file.name)
 
+def tts(text):
+
+
+response = client.audio.speech.create(
+    model="tts-1",
+    voice="alloy",
+    input==text,
+)
+
+response.stream_to_file("output.mp3")
+
+st.write("Síntese de Voz : ")
+st.audio('output.mp3')
+
 def analyze_image_with_openai(image):
     # This function will send a request to OpenAI's GPT-4 Vision API to analyze the image.
     # The 'image' parameter can be a URL or base64-encoded data.
@@ -141,7 +155,7 @@ def main():
                 #st.write("Translated Description: ", translated_description)
                 
                 # Convert the description to speech
-                fala(description)
+                tts(description)
                 
     if option=='Camera':
         picture = st.camera_input("Tire uma foto")
@@ -167,7 +181,7 @@ def main():
                 #st.write("Translated Description: ", translated_description)
                 
                 # Convert the description to speech
-                fala(description)
+                tts(description)
 
 if __name__ == '__main__':
     main()
