@@ -86,7 +86,8 @@ def main():
                 st.write("Description: ", description)
 
                 #Calcular calorias
-                total= calcular_calorias_do_prato(description, tabela_calorias)
+                ingredientes = description.split(', ')
+                total= calcular_calorias_do_prato(ingredientes, tabela_calorias)
                 st.write("Total de Calorias: ", total)
  
                 
@@ -109,7 +110,8 @@ def main():
                 st.write("Description: ", description)
 
                 # Calcular calorias
-                total= calcular_calorias_do_prato(description, tabela_calorias)
+                ingredientes = description.split(', ')
+                total= calcular_calorias_do_prato(ingredientes, tabela_calorias)
                 st.write("Total de Calorias: ", total)
 
 if __name__ == '__main__':
