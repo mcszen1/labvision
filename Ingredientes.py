@@ -86,7 +86,7 @@ def main():
                 image_url = "data:image/jpg;base64," + base64.b64encode(image_data).decode()
         
                 # Analyze the image with OpenAI's GPT-4 Vision API
-                description = analyze_image_with_openai(image_url)
+                
 
 	st.write("Description: ", description)
 
@@ -105,12 +105,14 @@ def main():
         
                 # Analyze the image with OpenAI's GPT-4 Vision API
                 description = analyze_image_with_openai(image_url)
-    	st.write("Description: ", description)	
+    		
 
 		
       
 
 if __name__ == '__main__':
     main()
+
+st.write("Description: ", description)
 
 
