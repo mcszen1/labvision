@@ -85,7 +85,7 @@ def main():
                 # Display the description 
                 st.write("Description: ", description)
 
-                Calcular calorias
+                #Calcular calorias
                 total= calcular_calorias_do_prato(description, tabela_calorias)
                 st.write("Total de Calorias: ", total)
  
