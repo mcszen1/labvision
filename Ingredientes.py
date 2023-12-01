@@ -12,7 +12,7 @@ import pandas as pd
 # Initialize the OpenAI client with your API key
 client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 df = pd.read_csv('tabelacal.csv')
-tabela_calorias = df.set_index('Descrição')['Calorias (Kcal)'].to_dict()
+tabela_calorias = df.set_index('Descrição')['Calorias (Kcal)'].apply(pd.to_numeric, errors='coerce').to_dict()
 
 
 def save_uploaded_file(uploaded_file_content):
