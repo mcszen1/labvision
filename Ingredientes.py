@@ -92,9 +92,6 @@ def main():
                 # Display the description and translated text
                 total_calorias = calcular_calorias_do_prato(description, tabela_calorias)
 		st.write(f"Calorias totais do prato: {total_calorias}")
-
-
-                
     if option=='Camera':
         picture = st.camera_input("Tire uma foto")
 
