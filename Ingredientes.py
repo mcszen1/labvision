@@ -55,10 +55,16 @@ def calcular_calorias_do_prato(ingredientes, tabela_calorias):
     for ingrediente in ingredientes:
         ingrediente_encontrado = encontrar_ingrediente_semelhante(ingrediente, tabela_calorias.keys())
         if ingrediente_encontrado:
-            total_calorias += tabela_calorias.get(ingrediente_encontrado, 0)
+            calorias = tabela_calorias.get(ingrediente_encontrado, 0)
+            print(f"Ingrediente: {ingrediente_encontrado}, Calorias: {calorias}")  # Para depuração
+            if isinstance(calorias, (int, float)):  # Verifica se 'calorias' é um número
+                total_calorias += calorias
+            else:
+                print(f"Erro: valor de calorias para '{ingrediente_encontrado}' não é numérico.")
         else:
             st.write(f"Ingrediente não encontrado ou muito diferente: {ingrediente}")
     return total_calorias
+
 def main():
     st.image('labcom_logo_preto.jpg')
     st.title("Calculadora de Calorias")
