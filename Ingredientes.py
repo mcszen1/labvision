@@ -74,7 +74,7 @@ def main():
     st.write('Tenha uma ideia aproximada de quantas calorias você vai ingerir')
     st.write('Use uma imagem de arquivo ou tire uma foto com sua câmera')
     option = st.radio('Escolha a origem da sua imagem:',('Arquivo', 'Camera'))
-    st.button('Calcular Calorias')
+
     if option=="Arquivo":
         uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "png", "jpeg"])
         if uploaded_file:
@@ -92,7 +92,12 @@ def main():
                 
                  
                 # Display the description and translated text
-                st.write("Description: ", description) 
+                st.write("Description: ", description)
+		if st.button('Calcular Calorias'):
+			ingredientes_selecionados = description
+			total_calorias = calcular_calorias_do_prato(ingredientes_selecionados, tabela_calorias)
+			st.write(f"Calorias totais do prato: {total_calorias}")
+
 
                 
     if option=='Camera':
@@ -116,11 +121,16 @@ def main():
                 
                 # Display the description and translated text
                 st.write("Description: ", description)
+		if st.button('Calcular Calorias'):
+			ingredientes_selecionados = description
+			total_calorias = calcular_calorias_do_prato(ingredientes_selecionados, tabela_calorias)
+			st.write(f"Calorias totais do prato: {total_calorias}")
+
       
 
 if __name__ == '__main__':
     main()
-# Botão para calcular as calorias
+
               
 if st.button('Calcular Calorias'):
 	ingredientes_selecionados = description
