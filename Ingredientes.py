@@ -31,7 +31,7 @@ def analyze_image_with_openai(image):
             {
                 "role": "user",
                 "content": [
-                    {"type": "text", "text": "What’s in this image? Answer in Portuguese"},
+                    {"type": "text", "text": "What’s in this image? Make a list of only the foods you identify in the image, separating them with commas.. Answer in Portuguese"},
                     {"type": "image_url", "image_url": image},
                 ],
             }
@@ -85,9 +85,9 @@ def main():
                 # Display the description 
                 st.write("Description: ", description)
 
-                # Calcular calorias
-                # total= calcular_calorias_do_prato(description, tabela_calorias)
-                # st.write("Total de Calorias: ", total)
+                Calcular calorias
+                total= calcular_calorias_do_prato(description, tabela_calorias)
+                st.write("Total de Calorias: ", total)
  
                 
     if option == 'Camera':
