@@ -7,6 +7,7 @@ import requests, uuid, json
 from openai import OpenAI
 import json
 from fuzzywuzzy import process
+import pandas as pd
 
 # Initialize the OpenAI client with your API key
 client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
