@@ -84,10 +84,7 @@ def fala(text):
 
 def tts(text):
 
-    response = client.audio.speech.create(
-        model="tts-1",
-        voice="alloy",
-        input==text,)
+    response = client.audio.speech.create(model="tts-1", voice="alloy", input==text)
     
     response.stream_to_file("output.mp3")
     
