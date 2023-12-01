@@ -87,6 +87,7 @@ def main():
         
                 # Analyze the image with OpenAI's GPT-4 Vision API
                 description = analyze_image_with_openai(image_url)
+		st.write(description)
 
 
 
@@ -105,6 +106,7 @@ def main():
         
                 # Analyze the image with OpenAI's GPT-4 Vision API
                 description = analyze_image_with_openai(image_url)
+		st.write(description)
     		
 
 		
@@ -113,7 +115,6 @@ def main():
 if __name__ == '__main__':
     main()
 
-st.write("Description: ")
-st.write(description)
+
 
 
