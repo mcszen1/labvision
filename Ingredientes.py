@@ -1,3 +1,60 @@
+import base64
+import streamlit as st
+import pyttsx3
+import os
+import tempfile
+import requests, uuid, json
+import azure.cognitiveservices.speech as speechsdk
+from openai import OpenAI
+import json
+
+# Initialize the OpenAI client with your API key
+client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+
+def save_uploaded_file(uploaded_file_content):
+    with open("temp_image.jpg", "wb") as f:
+        f.write(uploaded_file_content)
+    return "temp_image.jpg"
+
+def analyze_image_with_openai(image):
+    # This function will send a request to OpenAI's GPT-4 Vision API to analyze the image.
+    # The 'image' parameter can be a URL or base64-encoded data.
+    # Here we provide a mock-up of the API call with placeholder response handling.
+
+    response = client.chat.completions.create(
+        model="gpt-4-vision-preview",
+        messages=[
+            {
+                "role": "user",
+                "content": [
+                    {"type": "text", "text": "What’s in this image? Answer in Portuguese"},
+                    {"type": "image_url", "image_url": image},
+                ],
+            }
+        ],
+        max_tokens=300,
+    )
+    description_content = response.choices[0].message.content
+    print(description_content)
+    
+    return description_content
+
+def encontrar_ingrediente_semelhante(ingrediente, opcoes):
+    ingrediente_semelhante, similaridade = process.extractOne(ingrediente, opcoes)
+    if similaridade > 60:  # Definir um limiar de similaridade
+        return ingrediente_semelhante
+    return None
+
+# Calcular as calorias do prato
+def calcular_calorias_do_prato(ingredientes, tabela_calorias):
+    total_calorias = 0
+    for ingrediente in ingredientes:
+        ingrediente_encontrado = encontrar_ingrediente_semelhante(ingrediente, tabela_calorias.keys())
+        if ingrediente_encontrado:
+            total_calorias += tabela_calorias.get(ingrediente_encontrado, 0)
+        else:
+            st.write(f"Ingrediente não encontrado ou muito diferente: {ingrediente}")
+    return total_calorias
 def main():
     st.image('labcom_logo_preto.jpg')
     st.title("Calculadora de Calorias")
