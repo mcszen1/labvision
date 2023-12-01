@@ -83,7 +83,7 @@ def main():
                 description = analyze_image_with_openai(image_url)
                 
                 # Display the description 
-                st.write("Description: ", description, type(description)
+                st.write("Description: ", description, type(description))
 
                 #Calcular calorias
                 ingredientes = description.split(', ')
@@ -107,7 +107,7 @@ def main():
                 description = analyze_image_with_openai(image_url)
                 
                 # Display the description 
-                st.write("Description: ", description, type(description)
+                st.write("Description: ", description, type(description))
 
                 # Calcular calorias
                 ingredientes = description.split(', ')
