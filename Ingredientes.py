@@ -83,10 +83,11 @@ def main():
                 description = analyze_image_with_openai(image_url)
                 
                 # Display the description 
-                st.write("Description: ", description, type(description))
+                st.write("Description: ", description)
 
                 #Calcular calorias
                 ingredientes = description.split(', ')
+                st.write(ingredientes,type(ingredientes))
                 total= calcular_calorias_do_prato(ingredientes, tabela_calorias)
                 st.write("Total de Calorias: ", total)
  
@@ -107,10 +108,11 @@ def main():
                 description = analyze_image_with_openai(image_url)
                 
                 # Display the description 
-                st.write("Description: ", description, type(description))
+                st.write("Description: ", description)
 
                 # Calcular calorias
                 ingredientes = description.split(', ')
+                st.write(ingredientes,type(ingredientes))
                 total= calcular_calorias_do_prato(ingredientes, tabela_calorias)
                 st.write("Total de Calorias: ", total)
 
