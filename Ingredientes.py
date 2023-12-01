@@ -87,6 +87,7 @@ def main():
         
                 # Analyze the image with OpenAI's GPT-4 Vision API
                 description = analyze_image_with_openai(image_url)
+		st.write('Ingredientes : ', description)
 		
     if option=='Camera':
         picture = st.camera_input("Tire uma foto")
@@ -103,6 +104,7 @@ def main():
         
                 # Analyze the image with OpenAI's GPT-4 Vision API
                 description = analyze_image_with_openai(image_url)
+		st.write('Ingredientes : ', description)
 
 		
       
