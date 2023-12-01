@@ -84,17 +84,16 @@ def fala(text):
 
 def tts(text):
 
-
-response = client.audio.speech.create(
-    model="tts-1",
-    voice="alloy",
-    input==text,
-)
-
-response.stream_to_file("output.mp3")
-
-st.write("Síntese de Voz : ")
-st.audio('output.mp3')
+    response = client.audio.speech.create(
+        model="tts-1",
+        voice="alloy",
+        input==text,
+    )
+    
+    response.stream_to_file("output.mp3")
+    
+    st.write("Síntese de Voz : ")
+    st.audio('output.mp3')
 
 def analyze_image_with_openai(image):
     # This function will send a request to OpenAI's GPT-4 Vision API to analyze the image.
