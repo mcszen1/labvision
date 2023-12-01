@@ -45,7 +45,7 @@ def analyze_image_with_openai(image):
 
 def encontrar_ingrediente_semelhante(ingrediente, opcoes):
     ingrediente_semelhante, similaridade = process.extractOne(ingrediente, opcoes)
-    if similaridade > 60:  # Definir um limiar de similaridade
+    if similaridade > 30:  # Definir um limiar de similaridade
         return ingrediente_semelhante
     return None
 
