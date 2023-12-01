@@ -66,8 +66,6 @@ def calcular_calorias_do_prato(ingredientes, tabela_calorias):
     return total_calorias
 
 
-
-
 def main():
     st.image('labcom_logo_preto.jpg')
     st.title('Calculadora de Calorias de Pratos')
@@ -89,8 +87,8 @@ def main():
         
                 # Analyze the image with OpenAI's GPT-4 Vision API
                 description = analyze_image_with_openai(image_url)
-                ingredientes_selecionados = description
-		total_calorias = calcular_calorias_do_prato(ingredientes_selecionados, tabela_calorias)
+                total_calorias = calcular_calorias_do_prato(description, tabela_calorias)
+		
                  
                 # Display the description and translated text
                 st.write("Description: ", description)
@@ -115,12 +113,10 @@ def main():
         
                 # Analyze the image with OpenAI's GPT-4 Vision API
                 description = analyze_image_with_openai(image_url)
-		ingredientes_selecionados = description
-		total_calorias = calcular_calorias_do_prato(ingredientes_selecionados, tabela_calorias)
+
+		total_calorias = calcular_calorias_do_prato(description, tabela_calorias)
                 
-                # Translate description to Portuguese
-                #translated_description = translate_to_portuguese(description)
-                
+                  
                 # Display the description and translated text
                 st.write("Description: ", description)
 		
