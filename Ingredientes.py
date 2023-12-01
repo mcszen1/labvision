@@ -92,8 +92,6 @@ def main():
                  
                 # Display the description and translated text
                 st.write("Description: ", description)
-	
-		
 		st.write(f"Calorias totais do prato: {total_calorias}")
 
 
@@ -119,7 +117,6 @@ def main():
                   
                 # Display the description and translated text
                 st.write("Description: ", description)
-		
 		st.write(f"Calorias totais do prato: {total_calorias}")
       
 
