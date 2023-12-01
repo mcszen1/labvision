@@ -87,7 +87,7 @@ def main():
         
                 # Analyze the image with OpenAI's GPT-4 Vision API
                 description = analyze_image_with_openai(image_url)
-		total_calorias = calcular_calorias_do_prato(description, tabela_calorias)
+		total_calorias = calcular_calorias_do_prato(list(description), tabela_calorias)
 		st.write("Description: ")
 		st.write(description)
 		st.write(f"Calorias totais do prato: {total_calorias}")
