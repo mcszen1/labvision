@@ -12,7 +12,7 @@ from fuzzywuzzy import process
 
 # Initialize the OpenAI client with your API key
 client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
-
+description=""
 def save_uploaded_file(uploaded_file_content):
     with open("temp_image.jpg", "wb") as f:
         f.write(uploaded_file_content)
