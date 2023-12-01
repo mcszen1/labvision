@@ -48,7 +48,8 @@ def encontrar_ingrediente_semelhante(ingrediente, opcoes):
     if similaridade > 30:  # Definir um limiar de similaridade
         st.write(ingrediente_semelhante,similaridade)
         return ingrediente_semelhante
-    return None
+    else:
+        return None
 
 # Calcular as calorias do prato
 def calcular_calorias_do_prato(ingredientes, tabela_calorias):
