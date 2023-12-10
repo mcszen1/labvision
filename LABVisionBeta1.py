@@ -4,7 +4,6 @@ import pyttsx3
 import os
 import tempfile
 import requests, uuid, json
-import azure.cognitiveservices.speech as speechsdk
 from openai import OpenAI
 import json
 
