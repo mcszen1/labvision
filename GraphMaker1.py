@@ -32,7 +32,7 @@ def generate_response(input_text):
 st.image("labcom_logo_preto.jpg",use_column_width="False")
 # Título do Aplicativo
 st.title('GRAPH MAKER')
-st.text_input('Entre com o texto para análise')
+input_text=st.text_input('Entre com o texto para análise')
 with st.spinner("📟 Analisando sua Persona. Aguarde."):
           resposta=generate_response(input_text)
           st.write(resposta)
