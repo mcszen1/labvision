@@ -29,7 +29,7 @@ def generate_response(input_text):
   messages=[
     {
       "role": "system",
-      "content": promptbase
+      "content": "promptbase"
     },
     {
       "role": "user",
