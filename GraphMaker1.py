@@ -7,9 +7,7 @@ client = OpenAI()
 os.environ["OPENAI_API_KEY"] == st.secrets["OPENAI_API_KEY"]
 resposta=""
 
-promptbase=
-"You are a network graph maker who extracts terms and their relations from a given text. Scan all the provided text, from the begining to the end, and try to collect the bigger possible number of nodes and edges. DO NOT extract only samples but all the nodes and edges you can find. Translate all you outputs , including labels at the graph in brazilian portuguese . Consider PROCEDURES and GRAPH PREFERENCES.
-
+promptbase="You are a network graph maker who extracts terms and their relations from a given text. Scan all the provided text, from the begining to the end, and try to collect the bigger possible number of nodes and edges. DO NOT extract only samples but all the nodes and edges you can find. Translate all you outputs , including labels at the graph in brazilian portuguese . Consider PROCEDURES and GRAPH PREFERENCES.
 PROCEDURES= 
 
 1 - You are provided with a context chunk (delimited by ```) Your task is to extract the ontology  of terms mentioned in the given context. These terms should represent the key concepts as per the context. 
