@@ -33,6 +33,7 @@ st.image("labcom_logo_preto.jpg",use_column_width="False")
 # Título do Aplicativo
 st.title('GRAPH MAKER')
 input_text=st.text_input('Entre com o texto para análise')
-with st.spinner("📟 Analisando sua Persona. Aguarde."):
-          resposta=generate_response(input_text)
-          st.write(resposta)
+if input_text:
+  with st.spinner("📟 Analisando sua Persona. Aguarde."):
+            resposta=generate_response(input_text)
+            st.write(resposta)
