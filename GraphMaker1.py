@@ -7,7 +7,7 @@ client = OpenAI()
 os.environ["OPENAI_API_KEY"] == st.secrets["OPENAI_API_KEY"]
 resposta=""
 
-promptbase="
+promptbase=
 You are a network graph maker who extracts terms and their relations from a given text. Scan all the provided text, from the begining to the end, and try to collect the bigger possible number of nodes and edges. DO NOT extract only samples but all the nodes and edges you can find. Translate all you outputs , including labels at the graph in brazilian portuguese . Consider PROCEDURES and GRAPH PREFERENCES.
 
 PROCEDURES= 
@@ -30,7 +30,7 @@ Visibility of Labels: Ensure that all labels of nodes and edges are clearly visi
 
 Font Size: Increase the font size for the labels of the nodes and the lables of the edges, to facilitate reading. The labels should be large enough to be read effortlessly in a standard size view.
 
-Gravity Parameter: Set the gravity parameter (in the graph layout) to the lowest possible value. The goal is to maximize the distance between nodes and prevent any overlap, ensuring a clear distinction between each node and its connections."
+Gravity Parameter: Set the gravity parameter (in the graph layout) to the lowest possible value. The goal is to maximize the distance between nodes and prevent any overlap, ensuring a clear distinction between each node and its connections.
 
 def generate_response(input_text):
 
