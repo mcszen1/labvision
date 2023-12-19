@@ -7,7 +7,15 @@ client = OpenAI()
 os.environ["OPENAI_API_KEY"] == st.secrets["OPENAI_API_KEY"]
 resposta=""
 
-promptbase=""You are a network graph maker who extracts terms and their relations from a given text. Scan all the provided text, from the begining to the end, and try to collect the bigger possible number of nodes and edges. DO NOT extract only samples but all the nodes and edges you can find. Translate all you outputs , including labels at the graph in brazilian portuguese . Consider PROCEDURES and GRAPH PREFERENCES.
+
+def generate_response(input_text):
+
+  response = client.chat.completions.create(
+  model="gpt-4-1106-preview",
+  messages=[
+    {
+      "role": "system",
+      "content": "You are a network graph maker who extracts terms and their relations from a given text. Scan all the provided text, from the begining to the end, and try to collect the bigger possible number of nodes and edges. DO NOT extract only samples but all the nodes and edges you can find. Translate all you outputs , including labels at the graph in brazilian portuguese . Consider PROCEDURES and GRAPH PREFERENCES.
 PROCEDURES= 1 - You are provided with a context chunk (delimited by ```) Your task is to extract the ontology  of terms mentioned in the given context. These terms should represent the key concepts as per the context. 
 2: While traversing through each sentence, Think about the key terms mentioned in it.
 Terms may include object, entity, location, organization, person, condition, acronym, documents, service, concept, etc.
@@ -21,15 +29,6 @@ Node 1, Node 2, Edge. GRAPH PREFERENCES = When creating the graph, please follow
 Visibility of Labels: Ensure that all labels of nodes and edges are clearly visible. Avoid any text overlaps and make sure each label can be easily read. Use a Fruchterman Reingold distribuition with scale = 1000 e k=1
 Font Size: Increase the font size for the labels of the nodes and the lables of the edges, to facilitate reading. The labels should be large enough to be read effortlessly in a standard size view.
 Gravity Parameter: Set the gravity parameter (in the graph layout) to the lowest possible value. The goal is to maximize the distance between nodes and prevent any overlap, ensuring a clear distinction between each node and its connections."
-
-def generate_response(input_text):
-
-  response = client.chat.completions.create(
-  model="gpt-4-1106-preview",
-  messages=[
-    {
-      "role": "system",
-      "content": "promptbase"
     },
     {
       "role": "user",
